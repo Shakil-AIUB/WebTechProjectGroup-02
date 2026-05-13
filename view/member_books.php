@@ -169,7 +169,7 @@ include '../controller/BorrowController.php';
                 </td>
 
                 <td>
-                    <button class="borrow-btn">
+                    <button class="borrow-btn" >
                         Borrow
                     </button>
                 </td>
@@ -183,6 +183,6 @@ include '../controller/BorrowController.php';
     </div>
 
 </div>
-
+<script src="../assets/js/borrow.js"></script>
 </body>
 </html>
