@@ -1,18 +1,34 @@
 <?php
-include_once '../model/Book.php';  
 
-class BorrowController
-{
-    public function showBooks(){
-        $books = getBooks();
-        
-        return $books;  
+include_once '../model/Book.php';  
+include_once '../model/BorrowModel.php';
+
+if (!class_exists('BorrowController')) {
+
+    class BorrowController
+    {
+        public function showBooks(){
+            return getBooks();
+        }
+
+        public function pendingRequests(){
+            return getPendingRequests();
+        }
     }
 }
 
-$controller = new BorrowController();   
+
+
+$controller = new BorrowController();
 
 $books = $controller->showBooks();
 
-include_once '../view/member_books.php';    
+$requests = $controller->pendingRequests();
+
+
+
+
+
+
+
 ?>
