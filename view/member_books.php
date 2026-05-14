@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,9 +171,12 @@ include '../controller/BorrowController.php';
                 </td>
 
                 <td>
-                    <button class="borrow-btn" >
-                        Borrow
-                    </button>
+                <button 
+class="borrow-btn"
+data-id="<?= $book['book_id']; ?>"
+>
+    Borrow
+</button>
                 </td>
 
             </tr>

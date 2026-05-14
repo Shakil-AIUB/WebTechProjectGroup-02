@@ -1,5 +1,5 @@
 <?php
-include '../model/Book.php';  
+include_once '../model/Book.php';  
 
 class BorrowController
 {
