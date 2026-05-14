@@ -49,9 +49,9 @@ if($row['available'] <= 0){
 
 $insert = "
 INSERT INTO borrow_records
-(member_id, book_id, status, borrow_date, due_date)
+(member_id, book_id, status, borrow_date, due_date, return_date)
 VALUES
-('$member_id', '$book_id', 'Pending', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 14 DAY))
+('$member_id', '$book_id', 'Pending', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 14 DAY), NULL)
 ";
 
 $conn->query($insert);

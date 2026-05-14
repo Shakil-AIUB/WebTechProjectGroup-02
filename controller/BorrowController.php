@@ -14,6 +14,10 @@ if (!class_exists('BorrowController')) {
         public function pendingRequests(){
             return getPendingRequests();
         }
+
+        public function searchLoans($keyword){
+            return searchActiveLoans($keyword);
+        }   
     }
 }
 
