@@ -1,16 +1,31 @@
 <?php
 
+<<<<<<< HEAD
 include "../Config/Auth.php";
 
 auth_check("librarian");
+=======
+include "../Controller/LibrarianDashboardController.php";
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
     <title>Librarian Dashboard</title>
 
     <style>
@@ -40,6 +55,7 @@ auth_check("librarian");
         }
 
         h1{
+<<<<<<< HEAD
             font-size: 24px;
             font-weight: 600;
             color: #1a1a1a;
@@ -51,6 +67,18 @@ auth_check("librarian");
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #888;
+=======
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        h2{
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #777;
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
             display: flex;
             align-items: center;
             gap: 10px;
@@ -59,23 +87,37 @@ auth_check("librarian");
         h2::after{
             content: '';
             flex: 1;
+<<<<<<< HEAD
             height: 0.5px;
             background: rgba(0,0,0,0.1);
         }
 
         /* Summary */
 
+=======
+            height: 1px;
+            background: rgba(0,0,0,0.1);
+        }
+
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         .summary-table{
             width: 100%;
             border-collapse: separate;
             border-spacing: 12px 0;
+<<<<<<< HEAD
             margin: 0 -12px;
+=======
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         }
 
         .summary-table th,
         .summary-table td{
             background: #eceee8;
+<<<<<<< HEAD
             border-radius: 8px;
+=======
+            border-radius: 10px;
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
             padding: 1rem;
             width: 25%;
             text-align: left;
@@ -83,6 +125,7 @@ auth_check("librarian");
 
         .summary-table th{
             font-size: 12px;
+<<<<<<< HEAD
             font-weight: 500;
             color: #666;
             padding-bottom: 4px;
@@ -100,19 +143,39 @@ auth_check("librarian");
         .card-grid{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+=======
+            color: #666;
+        }
+
+        .summary-table td{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .card-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
             gap: 1rem;
         }
 
         .card{
             background: #fff;
+<<<<<<< HEAD
             border: 0.5px solid rgba(0,0,0,0.1);
             border-radius: 12px;
             padding: 1.5rem;
+=======
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
             transition: 0.2s;
         }
 
         .card:hover{
             transform: translateY(-2px);
+<<<<<<< HEAD
             box-shadow: 0 6px 16px rgba(0,0,0,0.05);
         }
 
@@ -155,6 +218,36 @@ auth_check("librarian");
             border: 0.5px solid rgba(0,0,0,0.1);
             border-radius: 12px;
             overflow: hidden;
+=======
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .card h3{
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .card p{
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .card a{
+            background: #1a1a1a;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 18px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .activity-box{
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.08);
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         }
 
         .activity-table{
@@ -164,6 +257,7 @@ auth_check("librarian");
 
         .activity-table th{
             background: #eceee8;
+<<<<<<< HEAD
             padding: 12px 16px;
             text-align: left;
             font-size: 13px;
@@ -192,6 +286,34 @@ auth_check("librarian");
         .returned{
             background: #f0faf4;
             color: #1a7a40;
+=======
+            padding: 14px;
+            text-align: left;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .activity-table td{
+            padding: 14px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .status{
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .issued{
+            background: #fff4d6;
+            color: #9b6500;
+        }
+
+        .returned{
+            background: #e7f8ee;
+            color: #157347;
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         }
 
     </style>
@@ -202,7 +324,14 @@ auth_check("librarian");
 
 <div class="dashboard-container">
 
+<<<<<<< HEAD
     <h1>Librarian Dashboard</h1>
+=======
+    <h1>
+        Welcome,
+        <?= $_SESSION['name']; ?>
+    </h1>
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 
     <h2>Dashboard Summary</h2>
 
@@ -216,20 +345,31 @@ auth_check("librarian");
         </tr>
 
         <tr>
+<<<<<<< HEAD
             <td>540</td>
             <td>12</td>
             <td>7</td>
             <td>18</td>
+=======
+            <td><?= $totalBooks ?></td>
+            <td><?= $issuedToday ?></td>
+            <td><?= $returnedToday ?></td>
+            <td><?= $pendingReturns ?></td>
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         </tr>
 
     </table>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
     <h2>Quick Actions</h2>
 
     <div class="card-grid">
 
         <div class="card">
+<<<<<<< HEAD
             <h3>Manage Books</h3>
             <p>Add, edit and remove books from the library system.</p>
             <a href="../View/BookList.php">Open</a>
@@ -246,11 +386,69 @@ auth_check("librarian");
             <h3>Logout</h3>
             <p>Securely logout from the librarian dashboard.</p>
             <a href="../Controller/logout.php">Logout</a>
+=======
+
+            <h3>Add Book</h3>
+
+            <p>
+                Add new books to library.
+            </p>
+
+            <a href="AddBook.php">
+                Open
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Book List</h3>
+
+            <p>
+                Manage all books and availability.
+            </p>
+
+            <a href="BookList.php">
+                Open
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Genres</h3>
+
+            <p>
+                Add and manage genres.
+            </p>
+
+            <a href="Genres.php">
+                Open
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Logout</h3>
+
+            <p>
+                Securely logout from system.
+            </p>
+
+            <a href="../Controller/logout.php">
+                Logout
+            </a>
+
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         </div>
 
     </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
     <h2>Recent Activities</h2>
 
     <div class="activity-box">
@@ -264,6 +462,7 @@ auth_check("librarian");
                 <th>Date</th>
             </tr>
 
+<<<<<<< HEAD
             <tr>
                 <td>Shakil Ahmed</td>
                 <td>Web Technology</td>
@@ -284,6 +483,73 @@ auth_check("librarian");
                 <td><span class="status issued">Issued</span></td>
                 <td>11 May 2026</td>
             </tr>
+=======
+            <?php while($row = $activities->fetch_assoc()) { ?>
+
+            <tr>
+
+                <td>
+                    <?= $row['member_name']; ?>
+                </td>
+
+                <td>
+                    <?= $row['book_title']; ?>
+                </td>
+
+                <td>
+
+                    <?php
+                    if($row['status'] == "Returned")
+                    {
+                    ?>
+
+                    <span class="status returned">
+                        Returned
+                    </span>
+
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
+
+                    <span class="status issued">
+                        Issued
+                    </span>
+
+                    <?php
+                    }
+                    ?>
+
+                </td>
+
+                <td>
+
+                    <?php
+
+                    if($row['status'] == "Returned")
+                    {
+                        echo date(
+                            "d M Y",
+                            strtotime($row['return_date'])
+                        );
+                    }
+                    else
+                    {
+                        echo date(
+                            "d M Y",
+                            strtotime($row['borrow_date'])
+                        );
+                    }
+
+                    ?>
+
+                </td>
+
+            </tr>
+
+            <?php } ?>
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 
         </table>
 
@@ -291,6 +557,9 @@ auth_check("librarian");
 
 </div>
 
+<<<<<<< HEAD
 <p style="text-align:center;margin-top:20px;"><a href="LibrarianFineDashboard.php">Fine Dashboard</a></p>
+=======
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 </body>
 </html>

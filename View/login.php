@@ -28,9 +28,16 @@ session_start();
 <html>
 
 <head>
+<<<<<<< HEAD
     <title>Login</title>
 
         <style>
+=======
+       <link rel="stylesheet" href="../View/css/style.css">
+    <title>Login</title>
+
+            <style>
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         * {
             box-sizing: border-box;
             margin: 0;
@@ -146,7 +153,10 @@ session_start();
     </style>
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 </head>
 <body>
 
@@ -189,6 +199,13 @@ session_start();
     </table>
 
 </form>
+<<<<<<< HEAD
 
 </body>
+=======
+</div>
+
+</body>
+
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 </html>

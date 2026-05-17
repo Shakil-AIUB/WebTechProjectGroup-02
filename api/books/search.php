@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 header('Content-Type: application/json');
 include_once __DIR__ . "/../../Config/Auth.php";
 include_once __DIR__ . "/../../Model/db.php";
@@ -18,3 +19,22 @@ if($result){
 }
 echo json_encode($books);
 ?>
+=======
+include "../../Model/db.php";
+
+$db = new db();
+$conn = $db->connection();
+
+$search = $_GET['q'] ?? '';
+
+$result = $db->searchBooks($conn, $search);
+
+$data = [];
+while($row = mysqli_fetch_assoc($result)){
+    $data[] = $row;
+}
+
+header("Content-Type: application/json");
+echo json_encode($data);
+?>
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
