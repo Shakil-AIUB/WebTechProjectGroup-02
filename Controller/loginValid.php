@@ -22,7 +22,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($result->num_rows>0){
 
             $row = $result->fetch_assoc();
+<<<<<<< HEAD
+            if(password_verify($password, $row["password_hash"]) || $row["password_hash"] == $password)
+=======
             if($row["password_hash"] == $password)
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
             {
                 $_SESSION["member_id"] =$row["id"];
                 $_SESSION["name"] =$row["name"];

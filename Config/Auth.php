@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+session_start();
+
+=======
+>>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 function auth_check($required_role = null)
 {
     // User not logged in
