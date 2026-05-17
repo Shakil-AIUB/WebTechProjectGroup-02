@@ -18,6 +18,10 @@ if (!class_exists('BorrowController')) {
         public function searchLoans($keyword){
             return searchActiveLoans($keyword);
         }   
+
+        public function singleBook($book_id){
+            return getSingleBook($book_id);
+        }
     }
 }
 
