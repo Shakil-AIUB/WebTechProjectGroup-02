@@ -1,18 +1,24 @@
 <?php
-include_once '../controller/BorrowController.php';
+
+include_once '../Controller/BorrowController.php';
 
 $controller = new BorrowController();
 
 $keyword = $_GET['search'] ?? '';
 
 $loans = $controller->searchLoans($keyword);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Return Books</title>
 
     <style>
@@ -24,138 +30,212 @@ $loans = $controller->searchLoans($keyword);
         }
 
         body{
+
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(to right, #eef2f3, #dfe9f3);
+
+            background: linear-gradient(to right, #eef2ff, #dbeafe);
+
             min-height: 100vh;
+
             padding: 40px;
         }
 
         .container{
-            width: 90%;
-            max-width: 1100px;
+
+            width: 95%;
+
+            max-width: 1200px;
+
             margin: auto;
         }
 
-        .card{
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
+        .header{
 
-        .title{
             text-align: center;
+
             margin-bottom: 30px;
         }
 
-        .title h1{
-            font-size: 38px;
-            color: #222;
+        .header h1{
+
+            font-size: 40px;
+
+            color: #0f172a;
+
             margin-bottom: 10px;
         }
 
-        .title p{
-            color: #666;
+        .header p{
+
+            color: #64748b;
+
             font-size: 16px;
         }
 
-       
+        .card{
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+            overflow-x: auto;
+        }
 
         .search-box{
+
             display: flex;
+
             gap: 10px;
-            margin-bottom: 25px;
+
+            margin-bottom: 20px;
         }
 
         .search-box input{
+
             flex: 1;
-            padding: 14px;
-            border: 1px solid #ddd;
+
+            padding: 12px;
+
+            border: 1px solid #cbd5e1;
+
             border-radius: 8px;
-            font-size: 15px;
+
             outline: none;
+
         }
 
         .search-box input:focus{
-            border-color: #4f46e5;
+
+            border-color: #2563eb;
         }
 
-        .search-btn{
-            background: #4f46e5;
-            color: white;
+        .search-box button{
+
+            padding: 12px 18px;
+
             border: none;
-            padding: 14px 22px;
-            border-radius: 8px;
-            cursor: pointer;
+
+            background: #2563eb;
+
+            color: white;
+
             font-weight: bold;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
             transition: 0.3s;
         }
 
-        .search-btn:hover{
-            background: #4338ca;
+        .search-box button:hover{
+
+            background: #1d4ed8;
         }
 
-
-
         table{
+
             width: 100%;
+
             border-collapse: collapse;
         }
 
         th{
-            background: #4f46e5;
+
+            background: #2563eb;
+
             color: white;
+
             padding: 16px;
+
             text-align: left;
+
+            font-size: 15px;
         }
 
         th:first-child{
+
             border-top-left-radius: 10px;
         }
 
         th:last-child{
+
             border-top-right-radius: 10px;
         }
 
         td{
+
             padding: 16px;
-            border-bottom: 1px solid #eee;
-            color: #444;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            color: #334155;
+
+            font-size: 15px;
         }
 
         tr:hover{
-            background: #f8f9ff;
+
+            background: #f8fafc;
+
             transition: 0.3s;
         }
 
-        
+        button.return-btn{
 
-        .return-btn{
             background: linear-gradient(to right, #ef4444, #dc2626);
+
             color: white;
+
             border: none;
-            padding: 10px 18px;
+
+            padding: 10px 16px;
+
             border-radius: 8px;
+
             cursor: pointer;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
-        .return-btn:hover{
+        button.return-btn:hover{
+
             transform: scale(1.05);
-            opacity: 0.9;
         }
 
-      
+        .empty{
 
-        .no-data{
             text-align: center;
-            padding: 20px;
-            color: #888;
+
+            padding: 25px;
+
+            color: #64748b;
+
             font-weight: bold;
         }
 
-     
+        @media(max-width:768px){
+
+            body{
+                padding: 20px;
+            }
+
+            .header h1{
+                font-size: 30px;
+            }
+
+            th, td{
+                padding: 12px;
+                font-size: 13px;
+            }
+
+        }
 
     </style>
 
@@ -165,60 +245,90 @@ $loans = $controller->searchLoans($keyword);
 
 <div class="container">
 
+    <div class="header">
+
+        <h1>
+
+            Return Processing
+
+        </h1>
+
+        <p>
+
+            Search active loans and process returns
+
+        </p>
+
+    </div>
+
     <div class="card">
 
-        <div class="title">
-            <h1>Return Processing</h1>
-            <p>Search active loans and process book returns</p>
-        </div>
+        <form class="search-box">
 
-        
-
-        <form method="GET" class="search-box">
-
-            <input 
-                type="text" 
-                name="search" 
-                placeholder="Search member or book..."
+            <input
+                type="text"
+                name="search"
                 value="<?= $keyword; ?>"
+                placeholder="Search member or book..."
             >
 
-            <button class="search-btn">
+            <button>
+
                 Search
+
             </button>
 
         </form>
 
-     
-
         <table>
 
             <tr>
+
                 <th>Member</th>
+
                 <th>Book</th>
-                <th>Borrow Date</th>
+
+                <th>Date</th>
+
                 <th>Action</th>
+
             </tr>
 
-            <?php if(count($loans) > 0) { ?>
+            <?php if(count($loans) > 0){ ?>
 
-                <?php foreach($loans as $l) { ?>
+                <?php foreach($loans as $l){ ?>
 
                 <tr id="row-<?= $l['borrow_id']; ?>">
 
-                    <td><?= $l['member_name']; ?></td>
+                    <td>
 
-                    <td><?= $l['book_title']; ?></td>
+                        <?= $l['member_name']; ?>
 
-                    <td><?= $l['borrow_date']; ?></td>
+                    </td>
 
                     <td>
-                        <button 
-                        class="return-btn" 
+
+                        <?= $l['book_title']; ?>
+
+                    </td>
+
+                    <td>
+
+                        <?= $l['borrow_date']; ?>
+
+                    </td>
+
+                    <td>
+
+                        <button
+                        class="return-btn"
                         data-id="<?= $l['borrow_id']; ?>"
                         >
-                            Process Return
+
+                            Return
+
                         </button>
+
                     </td>
 
                 </tr>
@@ -228,9 +338,13 @@ $loans = $controller->searchLoans($keyword);
             <?php } else { ?>
 
                 <tr>
-                    <td colspan="4" class="no-data">
+
+                    <td colspan="4" class="empty">
+
                         No Active Loans Found
+
                     </td>
+
                 </tr>
 
             <?php } ?>
@@ -241,7 +355,41 @@ $loans = $controller->searchLoans($keyword);
 
 </div>
 
-<script src="../assets/js/return.js"></script>
+<script>
+
+document.querySelectorAll(".return-btn").forEach(btn => {
+
+    btn.addEventListener("click", function(){
+
+        let id = this.dataset.id;
+
+        fetch("../api/borrow/return.php", {
+
+            method: "POST",
+
+            body: new URLSearchParams({
+
+                borrow_id: id
+
+            })
+
+        })
+
+        .then(res => res.json())
+
+        .then(data => {
+
+            alert(data.message);
+
+            document.getElementById("row-" + id).remove();
+
+        });
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>

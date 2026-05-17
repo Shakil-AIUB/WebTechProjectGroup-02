@@ -1,15 +1,19 @@
 <?php
-include_once '../../model/Book.php'
 
-header('Content-Type: application/json');
+include_once '../../Controller/BookController.php';
 
-$book_id = $_GET['id'];
+header("Content-Type: application/json");
 
-$book = getSingleBook($book_id);
+$id = $_GET['id'];
+
+$controller = new BookController();
+
+$book = $controller->singleBook($id);
 
 echo json_encode([
-    
+
     "available" => $book['available_copies']
 
 ]);
+
 ?>

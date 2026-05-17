@@ -1,14 +1,23 @@
 <?php
-include_once '../../config/database.php';
 
-$db = new Database();
-$conn = $db->connection();
+include_once '../../Controller/BorrowController.php';
+
+header("Content-Type: application/json");
 
 $id = $_POST['borrow_id'];
 
-$sql = "DELETE FROM borrow_records WHERE borrow_id='$id'";
+$controller = new BorrowController();
 
-$conn->query($sql);
+$controller->reject($id);
 
+<<<<<<< HEAD
+echo json_encode([
+
+    "status" => "success"
+
+]);
+
+=======
 echo json_encode(["status" => "success"]);
+>>>>>>> 75a8a0a245e5889229a2779f1713530bf8f94ecc
 ?>

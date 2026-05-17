@@ -1,23 +1,20 @@
 <?php
 
-include_once '../../config/database.php';
+include_once '../../Controller/BorrowController.php';
 
-$db = new Database();
-$conn = $db->connection();
+header("Content-Type: application/json");
 
 $id = $_POST['borrow_id'];
 
+$controller = new BorrowController();
 
-$sql = "
-UPDATE borrow_records 
-SET status='Returned', return_date=NOW()
-WHERE borrow_id='$id'
-";
-
-$conn->query($sql);
+$controller->returnBook($id);
 
 echo json_encode([
+
     "status" => "success",
     "message" => "Book Returned Successfully"
+
 ]);
+
 ?>
