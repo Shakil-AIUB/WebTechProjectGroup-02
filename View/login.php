@@ -29,6 +29,7 @@ session_start();
 
 <head>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <title>Login</title>
 
         <style>
@@ -38,6 +39,11 @@ session_start();
 
             <style>
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+    <title>Login</title>
+
+        <style>
+>>>>>>> aea489d (add jarif)
         * {
             box-sizing: border-box;
             margin: 0;
@@ -154,9 +160,13 @@ session_start();
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+
+>>>>>>> aea489d (add jarif)
 </head>
 <body>
 
@@ -200,6 +210,7 @@ session_start();
 
 </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 </body>
 =======
@@ -208,4 +219,8 @@ session_start();
 </body>
 
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+</div>
+</body>
+>>>>>>> aea489d (add jarif)
 </html>

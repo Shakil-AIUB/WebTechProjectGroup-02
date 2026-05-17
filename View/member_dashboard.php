@@ -223,7 +223,11 @@ auth_check("member");
         <div class="card">
             <h3>Browse Books</h3>
             <p>Search and explore available books in the library.</p>
+<<<<<<< HEAD
             <a href="BookList.php">Open</a>
+=======
+            <a href="Books.php">Open</a>
+>>>>>>> aea489d (add jarif)
         </div>
 
         <div class="card">
@@ -280,6 +284,9 @@ auth_check("member");
 
 </div>
 
+<<<<<<< HEAD
 <p style="text-align:center;margin-top:20px;"><a href="MyFines.php">My Fines</a></p>
+=======
+>>>>>>> aea489d (add jarif)
 </body>
 </html>

@@ -1,17 +1,24 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 include "../Config/Auth.php";
 
 auth_check("librarian");
 =======
 include "../Controller/LibrarianDashboardController.php";
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+include "../Config/Auth.php";
+
+auth_check("librarian");
+>>>>>>> aea489d (add jarif)
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
@@ -26,6 +33,11 @@ include "../Controller/LibrarianDashboardController.php";
           content="width=device-width, initial-scale=1.0">
 
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> aea489d (add jarif)
     <title>Librarian Dashboard</title>
 
     <style>
@@ -56,6 +68,9 @@ include "../Controller/LibrarianDashboardController.php";
 
         h1{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aea489d (add jarif)
             font-size: 24px;
             font-weight: 600;
             color: #1a1a1a;
@@ -67,6 +82,7 @@ include "../Controller/LibrarianDashboardController.php";
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #888;
+<<<<<<< HEAD
 =======
             font-size: 28px;
             font-weight: 700;
@@ -79,6 +95,8 @@ include "../Controller/LibrarianDashboardController.php";
             letter-spacing: 0.08em;
             color: #777;
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
             display: flex;
             align-items: center;
             gap: 10px;
@@ -88,36 +106,50 @@ include "../Controller/LibrarianDashboardController.php";
             content: '';
             flex: 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aea489d (add jarif)
             height: 0.5px;
             background: rgba(0,0,0,0.1);
         }
 
         /* Summary */
 
+<<<<<<< HEAD
 =======
             height: 1px;
             background: rgba(0,0,0,0.1);
         }
 
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
         .summary-table{
             width: 100%;
             border-collapse: separate;
             border-spacing: 12px 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
             margin: 0 -12px;
 =======
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+            margin: 0 -12px;
+>>>>>>> aea489d (add jarif)
         }
 
         .summary-table th,
         .summary-table td{
             background: #eceee8;
 <<<<<<< HEAD
+<<<<<<< HEAD
             border-radius: 8px;
 =======
             border-radius: 10px;
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+            border-radius: 8px;
+>>>>>>> aea489d (add jarif)
             padding: 1rem;
             width: 25%;
             text-align: left;
@@ -126,6 +158,9 @@ include "../Controller/LibrarianDashboardController.php";
         .summary-table th{
             font-size: 12px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aea489d (add jarif)
             font-weight: 500;
             color: #666;
             padding-bottom: 4px;
@@ -143,6 +178,7 @@ include "../Controller/LibrarianDashboardController.php";
         .card-grid{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+<<<<<<< HEAD
 =======
             color: #666;
         }
@@ -156,11 +192,14 @@ include "../Controller/LibrarianDashboardController.php";
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
             gap: 1rem;
         }
 
         .card{
             background: #fff;
+<<<<<<< HEAD
 <<<<<<< HEAD
             border: 0.5px solid rgba(0,0,0,0.1);
             border-radius: 12px;
@@ -170,12 +209,20 @@ include "../Controller/LibrarianDashboardController.php";
             padding: 1.5rem;
             border: 1px solid rgba(0,0,0,0.08);
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+            border: 0.5px solid rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+>>>>>>> aea489d (add jarif)
             transition: 0.2s;
         }
 
         .card:hover{
             transform: translateY(-2px);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aea489d (add jarif)
             box-shadow: 0 6px 16px rgba(0,0,0,0.05);
         }
 
@@ -218,6 +265,7 @@ include "../Controller/LibrarianDashboardController.php";
             border: 0.5px solid rgba(0,0,0,0.1);
             border-radius: 12px;
             overflow: hidden;
+<<<<<<< HEAD
 =======
             box-shadow: 0 6px 18px rgba(0,0,0,0.08);
         }
@@ -248,6 +296,8 @@ include "../Controller/LibrarianDashboardController.php";
             overflow: hidden;
             border: 1px solid rgba(0,0,0,0.08);
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
         }
 
         .activity-table{
@@ -258,6 +308,9 @@ include "../Controller/LibrarianDashboardController.php";
         .activity-table th{
             background: #eceee8;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aea489d (add jarif)
             padding: 12px 16px;
             text-align: left;
             font-size: 13px;
@@ -286,6 +339,7 @@ include "../Controller/LibrarianDashboardController.php";
         .returned{
             background: #f0faf4;
             color: #1a7a40;
+<<<<<<< HEAD
 =======
             padding: 14px;
             text-align: left;
@@ -314,6 +368,8 @@ include "../Controller/LibrarianDashboardController.php";
             background: #e7f8ee;
             color: #157347;
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
         }
 
     </style>
@@ -325,6 +381,7 @@ include "../Controller/LibrarianDashboardController.php";
 <div class="dashboard-container">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <h1>Librarian Dashboard</h1>
 =======
     <h1>
@@ -332,6 +389,9 @@ include "../Controller/LibrarianDashboardController.php";
         <?= $_SESSION['name']; ?>
     </h1>
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+    <h1>Librarian Dashboard</h1>
+>>>>>>> aea489d (add jarif)
 
     <h2>Dashboard Summary</h2>
 
@@ -346,34 +406,58 @@ include "../Controller/LibrarianDashboardController.php";
 
         <tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aea489d (add jarif)
             <td>540</td>
             <td>12</td>
             <td>7</td>
             <td>18</td>
+<<<<<<< HEAD
 =======
             <td><?= $totalBooks ?></td>
             <td><?= $issuedToday ?></td>
             <td><?= $returnedToday ?></td>
             <td><?= $pendingReturns ?></td>
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
         </tr>
 
     </table>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+
+>>>>>>> aea489d (add jarif)
     <h2>Quick Actions</h2>
 
     <div class="card-grid">
 
         <div class="card">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <h3>Manage Books</h3>
             <p>Add, edit and remove books from the library system.</p>
             <a href="../View/BookList.php">Open</a>
         </div>
+=======
+            <h3>Manage Books</h3>
+            <p>Add, edit and remove books from the library system.</p>
+            <a href="../View/Books.php">Open</a>
+        </div>
+
+        <div class="card">
+            <h3>Issue Books</h3>
+            <p>Issue books to members and manage borrowing records.</p>
+            <a href="../View/IssueBook.php">Open</a>
+        </div>
+
+>>>>>>> aea489d (add jarif)
         <div class="card">
             <h3>Update Profile</h3>
             <p>Edit your personal information and account password.</p>
@@ -386,6 +470,7 @@ include "../Controller/LibrarianDashboardController.php";
             <h3>Logout</h3>
             <p>Securely logout from the librarian dashboard.</p>
             <a href="../Controller/logout.php">Logout</a>
+<<<<<<< HEAD
 =======
 
             <h3>Add Book</h3>
@@ -441,14 +526,20 @@ include "../Controller/LibrarianDashboardController.php";
             </a>
 
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
         </div>
 
     </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+
+>>>>>>> aea489d (add jarif)
     <h2>Recent Activities</h2>
 
     <div class="activity-box">
@@ -463,6 +554,9 @@ include "../Controller/LibrarianDashboardController.php";
             </tr>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aea489d (add jarif)
             <tr>
                 <td>Shakil Ahmed</td>
                 <td>Web Technology</td>
@@ -483,6 +577,7 @@ include "../Controller/LibrarianDashboardController.php";
                 <td><span class="status issued">Issued</span></td>
                 <td>11 May 2026</td>
             </tr>
+<<<<<<< HEAD
 =======
             <?php while($row = $activities->fetch_assoc()) { ?>
 
@@ -550,6 +645,8 @@ include "../Controller/LibrarianDashboardController.php";
 
             <?php } ?>
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
 
         </table>
 
@@ -558,8 +655,11 @@ include "../Controller/LibrarianDashboardController.php";
 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <p style="text-align:center;margin-top:20px;"><a href="LibrarianFineDashboard.php">Fine Dashboard</a></p>
 =======
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+>>>>>>> aea489d (add jarif)
 </body>
 </html>
