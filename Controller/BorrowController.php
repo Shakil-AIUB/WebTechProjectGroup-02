@@ -1,42 +1,41 @@
 <?php
 
-include_once '../model/Book.php';  
-include_once '../model/BorrowModel.php';
+include_once '../Model/db.php';
 
-if (!class_exists('BorrowController')) {
+class BorrowController {
 
-    class BorrowController
-    {
-        public function showBooks(){
-            return getBooks();
-        }
+    public function requestBook($member_id, $book_id){
 
-        public function pendingRequests(){
-            return getPendingRequests();
-        }
+        return requestBorrow(
+            $member_id,
+            $book_id
+        );
+    }
 
-        public function searchLoans($keyword){
-            return searchActiveLoans($keyword);
-        }   
+    public function approve($id){
 
-        public function singleBook($book_id){
-            return getSingleBook($book_id);
-        }
+        return approveBorrow($id);
+    }
+
+    public function reject($id){
+
+        return rejectBorrow($id);
+    }
+
+    public function returnBook($id){
+
+        return returnBorrow($id);
+    }
+
+    public function pendingRequests(){
+
+        return pendingRequests();
+    }
+
+    public function searchLoans($keyword){
+
+        return searchLoans($keyword);
     }
 }
-
-
-
-$controller = new BorrowController();
-
-$books = $controller->showBooks();
-
-$requests = $controller->pendingRequests();
-
-
-
-
-
-
 
 ?>

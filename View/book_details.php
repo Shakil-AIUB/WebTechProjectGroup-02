@@ -1,57 +1,82 @@
 <?php
 
-include_once '../controller/BorrowController.php';
+include_once '../Controller/BookController.php';
 
-$controller = new BorrowController();
+$controller = new BookController();
 
-$book_id = $_GET['id'] ?? 0;
+$id = $_GET['id'];
 
-$book = $controller->singleBook($book_id);
+$book = $controller->singleBook($id);
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Details</title>
 </head>
 <body>
-    <div class="card">
-        <h1>
-            <?php echo $book['book_title']?>
 
-        </h1>
-        <h3>
-             <?php echo $book['book_author']; ?>
-        </h3>
+<h1>
+    <?= $book['book_title']; ?>
+</h1>
 
-        <div id="availability-badge">
+<h3>
+    <?= $book['book_author']; ?>
+</h3>
 
-        <?php
-         if($book['available_copies'] > 0){
-            echo '<span class="badge available">
-                Available
-            </span>';
-         }
-         else{
-            echo '<span class="badge available">
-                Unavailable
-            </span>';
-         }
+<div id="availability">
 
-        ?>
+<?php if($book['available_copies'] > 0){ ?>
 
-        </div>
+    <span>Available</span>
 
-    </div>
+<?php } else { ?>
 
-    <script>
-        const BOOK_ID = <?php echo $book_id; ?>;
-    </script>
+    <span>Unavailable</span>
 
-    <script src=""></script>
+<?php } ?>
+
+</div>
+
+<script>
+
+const BOOK_ID = <?= $id ?>;
+
+function updateAvailability(){
+
+    fetch(
+        "../api/books/availability.php?id=" + BOOK_ID
+    )
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        let div =
+        document.getElementById("availability");
+
+        if(data.available > 0){
+
+            div.innerHTML =
+            "<span>Available</span>";
+
+        }
+
+        else{
+
+            div.innerHTML =
+            "<span>Unavailable</span>";
+
+        }
+
+    });
+
+}
+
+updateAvailability();
+
+</script>
+
 </body>
 </html>
