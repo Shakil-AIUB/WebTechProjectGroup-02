@@ -169,6 +169,9 @@
                     <td> <label for ="email">Email: </label></td>
                     <td> <input type = "email" id="email" name ="email" onkeyup="CheckEmail()"></td>
                 </tr>
+
+
+                
                 <tr>
                     <td></td>
 <<<<<<< HEAD
@@ -204,6 +207,7 @@
                     <td><input type="date" id="date" name="date"></td>
                 </tr>
 
+
                 <tr>
                     <td colspan="2"><a href="login.php">Already Registered? Login here</a></td>
                 </tr>
@@ -217,6 +221,8 @@
         </form>
 <<<<<<< HEAD
         </div>
+
+
 
 =======
     </div>

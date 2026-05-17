@@ -26,9 +26,7 @@ $data = $user->fetch_assoc();
 <head>
     <title>Profile</title>
 <<<<<<< HEAD
-
     <style>
-
         body{
             font-family: Arial;
             background: #f4f6f9;
@@ -47,7 +45,6 @@ $data = $user->fetch_assoc();
             margin-top: 10px;
             margin-bottom: 15px;
         }
-
         button{
             padding: 10px 20px;
             background: #1a3a5c;
