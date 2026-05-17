@@ -23,10 +23,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $row = $result->fetch_assoc();
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(password_verify($password, $row["password_hash"]) || $row["password_hash"] == $password)
 =======
             if($row["password_hash"] == $password)
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+            if($row["password_hash"] == $password)
+>>>>>>> aea489d (add jarif)
             {
                 $_SESSION["member_id"] =$row["id"];
                 $_SESSION["name"] =$row["name"];

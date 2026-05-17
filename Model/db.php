@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 class db
 {
@@ -352,6 +353,8 @@ $sql = "SELECT
 }
 
 =======
+=======
+>>>>>>> aea489d (add jarif)
 class db{
 function connection()
 {
@@ -368,6 +371,16 @@ if($connection->connect_error)
 return $connection;
 }
 
+<<<<<<< HEAD
+=======
+// function signup($connection, $tablename, $username, $password, $filepath)
+// {
+//     $sql= "INSERT INTO " .$tablename. "(username, password, filepath) VALUES ('".$username."', '".$password."','".$filepath."')";
+//     $result = $connection->query($sql);
+//     return $result;
+// }
+
+>>>>>>> aea489d (add jarif)
 function signin($connection, $tablename, $email)
 {
     $sql = "SELECT * FROM ".$tablename." WHERE email='".$email."'";
@@ -380,11 +393,19 @@ function getUserById($connection, $id)
     $sql = "SELECT * FROM members WHERE id = '".$id."'";
     $result = $connection->query($sql);
     return $result;
+<<<<<<< HEAD
+=======
+
+>>>>>>> aea489d (add jarif)
 }
 
 function updateProfile($connection, $id, $name, $email, $phone)
 {
     $sql = "UPDATE members SET name='".$name."', email='".$email."', phone='".$phone."' WHERE id='".$id."'";
+<<<<<<< HEAD
+=======
+
+>>>>>>> aea489d (add jarif)
     $result = $connection->query($sql);
     return $result;
 }
@@ -398,11 +419,19 @@ function CheckUser($connection, $tablename, $email)
 
 function updatePassword($connection, $id, $newPassword)
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> aea489d (add jarif)
     $sql = "UPDATE members SET password_hash='".$newPassword."' WHERE id='".$id."'";
     $result = $connection->query($sql);
     return $result;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> aea489d (add jarif)
 function WithSQLInjection($connection, $tablename, $name,$email,$phone, $password, $role, $date)
 {
     $sql= "INSERT INTO " .$tablename. "(name,email,phone, password_hash, role, created_at) VALUES (?,?,?,?,?,?)";
@@ -411,7 +440,10 @@ function WithSQLInjection($connection, $tablename, $name,$email,$phone, $passwor
     $result = $statement->execute();
     return $result;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> aea489d (add jarif)
 function getDashboardCounts($connection, $member_id)
 {
     $counts = [
@@ -419,6 +451,7 @@ function getDashboardCounts($connection, $member_id)
         "upcoming_dues"     => 0,
         "outstanding_fines" => 0,
     ];
+<<<<<<< HEAD
 
     $r = $connection->query("SELECT COUNT(*) AS cnt FROM loans WHERE member_id='$member_id' AND status='active'");
     if($r) $counts["active_loans"] = (int)$r->fetch_assoc()["cnt"];
@@ -704,4 +737,29 @@ function searchBooks($connection, $search)
 
 }
 >>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+=======
+ 
+    $r = $connection->query("SELECT COUNT(*) AS cnt FROM loans WHERE member_id='$member_id' AND status='active'");
+    if($r) $counts["active_loans"] = (int)$r->fetch_assoc()["cnt"];
+ 
+    $r = $connection->query("SELECT COUNT(*) AS cnt FROM loans WHERE member_id='$member_id' AND status='active' AND due_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)");
+    if($r) $counts["upcoming_dues"] = (int)$r->fetch_assoc()["cnt"];
+ 
+    $r = $connection->query("SELECT COALESCE(SUM(amount),0) AS total FROM fines WHERE member_id='$member_id' AND paid=0");
+    if($r) $counts["outstanding_fines"] = (float)$r->fetch_assoc()["total"];
+ 
+    return $counts;
+}
+
+
+
+
+
+
+
+
+
+}
+
+>>>>>>> aea489d (add jarif)
 ?>
