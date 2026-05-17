@@ -172,6 +172,8 @@ include '../controller/BorrowController.php';
 
                 <td>
                 <button class="borrow-btn" data-id="<?= $book['book_id']; ?>">Borrow</button>
+
+                <a href="book_details.php?id=<?php echo $book['book_id']; ?>"><button class="details-btn">Details</button></a>
                 </td>
 
             </tr>
