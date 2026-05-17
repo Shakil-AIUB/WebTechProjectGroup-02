@@ -21,9 +21,7 @@ $books = $obj->GetBooks($conn);
 <head>
 <<<<<<< HEAD
     <title>Books</title>
-
     <style>
-
         body{
             font-family: Arial;
             background: #f4f6f9;
