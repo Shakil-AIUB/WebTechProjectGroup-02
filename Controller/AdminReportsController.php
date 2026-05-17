@@ -10,5 +10,8 @@ $members = $database->topMembers($connection);
 $monthly = $database->monthlyBorrowReport($connection);
 $chartLabels = [];
 $chartData = [];
+
+
 while($row = $monthly->fetch_assoc()){ $chartLabels[] = $row["month_label"]; $chartData[] = (int)$row["total"]; }
+
 ?>

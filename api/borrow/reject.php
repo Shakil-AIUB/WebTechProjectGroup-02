@@ -10,7 +10,5 @@ $sql = "DELETE FROM borrow_records WHERE borrow_id='$id'";
 
 $conn->query($sql);
 
-echo json_encode([
-    "status" => "success"
-]);
+echo json_encode(["status" => "success"]);
 ?>
