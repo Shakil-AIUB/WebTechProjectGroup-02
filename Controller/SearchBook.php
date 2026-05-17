@@ -1,5 +1,4 @@
 <?php
-
 header("Content-Type: application/json");
 
 include "../Model/db.php";
@@ -10,8 +9,8 @@ $conn = $db->connection();
 
 $search = "";
 
-if(isset($_GET['q']))
-{
+if(isset($_GET['q'])){
+    
     $search = $_GET['q'];
 }
 
