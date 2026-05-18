@@ -192,7 +192,7 @@
             color: #c27c00;
         }
 
-<<<<<<< HEAD
+
         .report-link{
     text-align: center;
     margin-top: 20px;
@@ -210,8 +210,6 @@
         background: #10263d;
     }
 
-=======
->>>>>>> aea489d (add jarif)
     </style>
 
 </head>
@@ -250,11 +248,8 @@
         <div class="card">
             <h3>Manage Books</h3>
             <p>Add, update or remove books from the system.</p>
-<<<<<<< HEAD
+
             <a href="../View/BookList.php">Open</a>
-=======
-            <a href="../View/Books.php">Open</a>
->>>>>>> aea489d (add jarif)
         </div>
 
         <div class="card">
@@ -263,20 +258,7 @@
             <a href="../View/Users.php">Open</a>
         </div>
 
-        <div class="card">
-            <h3>Update Profile</h3>
-            <p>Edit your profile information and password.</p>
-<<<<<<< HEAD
-            <button onclick="window.location.href='../View/Profile.php'">
-                Open
-            </button>
-=======
-            <a href='../View/Profile.php'>
-                Open
-            </a>
->>>>>>> aea489d (add jarif)
-        </div>
-
+        
         <div class="card">
             <h3>Logout</h3>
             <p>Securely logout from the admin dashboard.</p>
@@ -326,12 +308,9 @@
 
 </div>
 
-<<<<<<< HEAD
 <p class="report-link">
     <a href="AdminReports.php">Admin Reports</a>
 </p>
 
-=======
->>>>>>> aea489d (add jarif)
 </body>
 </html>

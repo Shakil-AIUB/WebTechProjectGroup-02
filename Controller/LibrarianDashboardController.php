@@ -1,8 +1,8 @@
 <?php
 
-session_start();
+// session_start();
 
-include "../Config/Auth.php";
+include_once "../Config/Auth.php";
 include "../Model/db.php";
 
 auth_check("librarian");

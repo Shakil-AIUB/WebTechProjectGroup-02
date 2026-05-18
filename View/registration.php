@@ -174,12 +174,9 @@
                 
                 <tr>
                     <td></td>
-<<<<<<< HEAD
                     <td id="userresponse" style="color: red;"></td>
-=======
                     <td><p id="userresponse" style="color: red;"></p></td>
->>>>>>> aea489d (add jarif)
-                </tr>
+             </tr>
 
                 <tr>
                     <td> <label for ="phone">Phone:</label></td>
@@ -219,14 +216,11 @@
 
             </table>
         </form>
-<<<<<<< HEAD
         </div>
 
 
 
-=======
     </div>
->>>>>>> aea489d (add jarif)
 
 </body>
 </html>

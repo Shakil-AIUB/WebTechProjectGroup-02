@@ -68,50 +68,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 
     /* PASSWORD CHANGE */
-<<<<<<< HEAD
-
-    if(!empty($_POST["current_password"]) && !empty($_POST["new_password"]))
-    {
-
-        $current = $_POST["current_password"];
-
-        $new = $_POST["new_password"];
-
-
-        // Reload latest user info
-        $result = $db->getUserById($conn, $id);
-
-        $user = $result->fetch_assoc();
-
-
-        // Verify current password
-        if(password_verify($current, $user["password_hash"]))
-        {
-
-            // Hash new password
-            $hash = password_hash($new, PASSWORD_DEFAULT);
-
-
-            $passwordUpdate = $db->updatePassword($conn, $id, $hash);
-
-
-            if($passwordUpdate)
-            {
-                $success = "Password Updated Successfully";
-            }
-            else
-            {
-                $error = "Password Update Failed";
-            }
-
-        }
-        else
-        {
-            $error = "Current Password Incorrect";
-        }
-
-    }
-=======
 if (!empty($_POST["current_password"]) && !empty($_POST["new_password"])) {
 
     $current = $_POST["current_password"];
@@ -134,8 +90,8 @@ if (!empty($_POST["current_password"]) && !empty($_POST["new_password"])) {
         $error = "Current Password Incorrect";
     }
 }
->>>>>>> aea489d (add jarif)
 
 }
+
 
 ?>

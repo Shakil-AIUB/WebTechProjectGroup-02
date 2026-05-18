@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 <?php
 
-include "../Config/Auth.php";
+// include "../Config/Auth.php";
 include "../Model/db.php";
 
-auth_check("admin");
+// auth_check("librarian");
 
 $obj = new db();
 $conn = $obj->connection();
@@ -12,26 +11,13 @@ $conn = $obj->connection();
 $books = $obj->GetBooks($conn);
 
 ?>
-=======
-<?php include "../Controller/BookListController.php"; ?>
->>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-    <title>Books</title>
-    <style>
-        body{
-            font-family: Arial;
-            background: #f4f6f9;
-            padding: 40px;
-=======
-
     <title>Book List</title>
 
     <style>
-
         *{
             box-sizing: border-box;
             margin: 0;
@@ -106,34 +92,11 @@ $books = $obj->GetBooks($conn);
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid #dde3eb;
->>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
         }
 
         table{
             width: 100%;
             border-collapse: collapse;
-<<<<<<< HEAD
-            background: white;
-        }
-
-        th{
-            background: #1a3a5c;
-            color: white;
-            padding: 12px;
-        }
-
-        td{
-            padding: 12px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .red{
-            color: red;
-            font-weight: bold;
-        }
-
-    </style>
-=======
         }
 
         thead{
@@ -186,98 +149,34 @@ $books = $obj->GetBooks($conn);
         .action-link:hover{
             text-decoration: underline;
         }
-
     </style>
-
->>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
 </head>
 
 <body>
 
-<<<<<<< HEAD
-<h2>Book List</h2>
-
-<table>
-
-<tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Genre</th>
-    <th>Available</th>
-</tr>
-
-<?php
-while($row = $books->fetch_assoc())
-{
-?>
-
-<tr>
-
-    <td><?php echo $row["title"]; ?></td>
-
-    <td><?php echo $row["author"]; ?></td>
-
-    <td><?php echo $row["genre_name"]; ?></td>
-
-    <td>
-
-        <?php
-
-        if($row["available_copies"] > 0)
-        {
-            echo $row["available_copies"];
-        }
-        else
-        {
-            echo "<span class='red'>Unavailable</span>";
-        }
-
-        ?>
-
-    </td>
-
-</tr>
-
-<?php
-}
-?>
-
-</table>
-
-<br>
-
-<a href="admin_dashboard.php">Back</a>
-=======
 <div class="page-wrapper">
 
     <div class="top-bar">
+        <h1 class="page-title">Book List</h1>
 
-        <h1 class="page-title">
-            Book List
-        </h1>
-
-        <a class="back-btn"
-           href="librarian_dashboard.php">
-            ← Back
+        <a class="back-btn" href="librarian_dashboard.php">
+            Back
         </a>
-
     </div>
 
     <div class="search-box">
-
-        <input type="text"
-               id="search"
-               placeholder="🔍 Search by title, author or ISBN..."
-               onkeyup="searchBook()">
-
+        <input
+            type="text"
+            id="search"
+            placeholder="Search by title, author or ISBN..."
+            onkeyup="searchBook()"
+        >
     </div>
 
     <div class="table-container">
 
         <table>
-
             <thead>
-
                 <tr>
                     <th>Title</th>
                     <th>Author</th>
@@ -286,59 +185,53 @@ while($row = $books->fetch_assoc())
                     <th>Available Copies</th>
                     <th>Action</th>
                 </tr>
-
             </thead>
 
             <tbody id="tableBody">
 
-            <?php while($row = mysqli_fetch_assoc($books)){ ?>
+                <?php while($row = mysqli_fetch_assoc($books)) { ?>
 
-                <?php $class = ($row['available_copies'] == 0) ? "red-row" : ""; ?>
+                    <?php
+                        $class = ($row["available_copies"] == 0)
+                            ? "red-row"
+                            : "";
+                    ?>
 
-                <tr class="<?php echo $class; ?>">
+                    <tr class="<?php echo $class; ?>">
 
-                    <td>
-                        <?php echo $row['title']; ?>
-                    </td>
+                        <td><?php echo $row["title"]; ?></td>
 
-                    <td>
-                        <?php echo $row['author']; ?>
-                    </td>
+                        <td><?php echo $row["author"]; ?></td>
 
-                    <td>
-                        <?php echo $row['genre_name']; ?>
-                    </td>
+                        <td><?php echo $row["genre_name"]; ?></td>
 
-                    <td>
-                        <?php echo $row['total_copies']; ?>
-                    </td>
+                        <td><?php echo $row["total_copies"]; ?></td>
 
-                    <td>
-                        <?php echo $row['available_copies']; ?>
-                    </td>
+                        <td><?php echo $row["available_copies"]; ?></td>
 
-                    <td>
+                        <td>
+                            <a
+                                class="action-link edit-link"
+                                href="EditBook.php?id=<?php echo $row["id"]; ?>"
+                            >
+                                Edit
+                            </a>
 
-                        <a class="action-link edit-link"
-                           href="EditBook.php?id=<?php echo $row['id']; ?>">
-                            Edit
-                        </a>
+                            |
 
-                        |
+                            <a
+                                class="action-link delete-link"
+                                href="../Controller/DeleteBookController.php?id=<?php echo $row["id"]; ?>"
+                            >
+                                Delete
+                            </a>
+                        </td>
 
-                        <a class="action-link delete-link"
-                           href="../Controller/DeleteBookController.php?id=<?php echo $row['id']; ?>">
-                            Delete
-                        </a>
+                    </tr>
 
-                    </td>
-
-                </tr>
-
-            <?php } ?>
+                <?php } ?>
 
             </tbody>
-
         </table>
 
     </div>
@@ -373,9 +266,9 @@ function searchBook()
                     (book.available_copies == 0)
                     ? "red-row"
                     : "";
-
                 output += `
 
+                
                 <tr class="${className}">
 
                     <td>${book.title}</td>
@@ -417,8 +310,7 @@ function searchBook()
     xhttp.send();
 }
 
-</script>
->>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
+</script>>
 
 </body>
 </html>

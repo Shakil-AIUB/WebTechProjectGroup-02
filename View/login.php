@@ -2,48 +2,32 @@
 
 session_start();
 
-    $isloggedIn =$_SESSION["loggedIn"] ?? false;
+$isloggedIn = $_SESSION["loggedIn"] ?? false;
 
-    if($isloggedIn)
-    {
-        $role = $_SESSION["role"];
-        if($role == "member")
-         {
-            header("Location: member_dashboard.php");
-        }elseif($role == "librarian")
-        {
-        
+if ($isloggedIn) {
+    $role = $_SESSION["role"] ?? "";
+
+    if ($role == "member") {
+        header("Location: member_dashboard.php");
+        exit();
+    } elseif ($role == "librarian") {
         header("Location: librarian_dashboard.php");
-        }
-    elseif($role == "admin")
-        {
+        exit();
+    } elseif ($role == "admin") {
         header("Location: admin_dashboard.php");
-        }
+        exit();
+    }
 }
 
 ?>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-<<<<<<< HEAD
-<<<<<<< HEAD
+    <link rel="stylesheet" href="../View/css/style.css">
     <title>Login</title>
 
-        <style>
-=======
-       <link rel="stylesheet" href="../View/css/style.css">
-    <title>Login</title>
-
-            <style>
->>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
-=======
-    <title>Login</title>
-
-        <style>
->>>>>>> aea489d (add jarif)
+    <style>
         * {
             box-sizing: border-box;
             margin: 0;
@@ -80,7 +64,7 @@ session_start();
         .login-container h1 {
             font-size: 20px;
             font-weight: 500;
-            color: #1a1a1a;
+            color: red;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid #eaecf0;
@@ -157,70 +141,52 @@ session_start();
             text-decoration: underline;
         }
     </style>
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
-=======
-
->>>>>>> aea489d (add jarif)
 </head>
+
 <body>
 
     <div class="container">
         <h1>Welcome to Bashundhara Library</h1>
     </div>
 
+    <div class="login-container">
 
-<div class="login-container">
+        <form method="post" action="../Controller/loginValid.php">
 
-<form method="post" action="../Controller/loginValid.php">
+            <h1>Login Page</h1>
 
-    <?php
-        echo "<h1 style='color: red'>
-              Login Page
-              </h1>";
-    ?>
+            <table>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input type="email" name="email" required>
+                    </td>
+                </tr>
 
-    <table>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="password" name="password" required>
+                    </td>
+                </tr>
 
-        <tr>
-            <td>Email:</td>
-            <td><input type="email" name="email"></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-            <td colspan="2"><a href="registration.php">Not Registered? Register here</a></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Login">
-            </td>
+                <tr>
+                    <td colspan="2">
+                        <a href="registration.php">Not Registered? Register here</a>
+                    </td>
+                </tr>
 
-        </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Login">
+                    </td>
+                </tr>
+            </table>
 
-    </table>
+        </form>
 
-</form>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-</body>
-=======
-</div>
+    </div>
 
 </body>
-
->>>>>>> 4fdd6d3e3b9187c46a1e4f63c90092607aa87cc8
-=======
-</div>
-</body>
->>>>>>> aea489d (add jarif)
 </html>

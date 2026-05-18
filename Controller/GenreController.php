@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include "../Config/Auth.php";
 include "../Model/db.php";
 

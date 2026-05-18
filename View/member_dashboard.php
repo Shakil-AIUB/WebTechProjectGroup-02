@@ -8,6 +8,7 @@ auth_check("member");
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Member Dashboard</title>
 
@@ -215,7 +216,6 @@ auth_check("member");
 
     </table>
 
-
     <h2>Quick Actions</h2>
 
     <div class="card-grid">
@@ -223,11 +223,7 @@ auth_check("member");
         <div class="card">
             <h3>Browse Books</h3>
             <p>Search and explore available books in the library.</p>
-<<<<<<< HEAD
-            <a href="BookList.php">Open</a>
-=======
-            <a href="Books.php">Open</a>
->>>>>>> aea489d (add jarif)
+            <a href="member_books.php">Open</a>
         </div>
 
         <div class="card">
@@ -243,13 +239,18 @@ auth_check("member");
         </div>
 
         <div class="card">
+            <h3>My Fines</h3>
+            <p>Check and manage your unpaid fines.</p>
+            <a href="MyFines.php">Open</a>
+        </div>
+
+        <div class="card">
             <h3>Logout</h3>
             <p>Securely logout from your member account.</p>
             <a href="../Controller/logout.php">Logout</a>
         </div>
 
     </div>
-
 
     <h2>Recent Borrowed Books</h2>
 
@@ -268,14 +269,22 @@ auth_check("member");
                 <td>Web Technology</td>
                 <td>10 May 2026</td>
                 <td>17 May 2026</td>
-                <td><span class="status borrowed">Borrowed</span></td>
+                <td>
+                    <span class="status borrowed">
+                        Borrowed
+                    </span>
+                </td>
             </tr>
 
             <tr>
                 <td>Database Systems</td>
                 <td>02 May 2026</td>
                 <td>09 May 2026</td>
-                <td><span class="status returned">Returned</span></td>
+                <td>
+                    <span class="status returned">
+                        Returned
+                    </span>
+                </td>
             </tr>
 
         </table>
@@ -284,9 +293,6 @@ auth_check("member");
 
 </div>
 
-<<<<<<< HEAD
 <p style="text-align:center;margin-top:20px;"><a href="MyFines.php">My Fines</a></p>
-=======
->>>>>>> aea489d (add jarif)
 </body>
 </html>

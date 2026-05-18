@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 include_once '../Controller/BookController.php';
 
@@ -6,6 +7,9 @@ $controller = new BookController();
 
 $books = $controller->allBooks();
 
+=======
+include '../Controller/BorrowController.php';
+>>>>>>> a0a6185 (fix some merged part)
 ?>
 
 <!DOCTYPE html>
@@ -227,6 +231,10 @@ $books = $controller->allBooks();
 
 <body>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a0a6185 (fix some merged part)
 <div class="container">
 
     <div class="header">

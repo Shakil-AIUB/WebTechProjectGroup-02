@@ -1,58 +1,14 @@
-<<<<<<< HEAD
 <?php
 
-include "../Config/Auth.php";
-include "../Model/db.php";
-
-auth_check("admin");
-auth_check("member");
-
-$obj = new db();
-$conn = $obj->connection();
-
-$id = $_SESSION["member_id"];
-
-$user = $obj->getUserById($conn, $id);
-
-$data = $user->fetch_assoc();
+include_once "../Controller/ProfileValid.php";
 
 ?>
-=======
-<?php include "../Controller/ProfileValid.php"; ?>
->>>>>>> aea489d (add jarif)
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Profile</title>
-<<<<<<< HEAD
-    <style>
-        body{
-            font-family: Arial;
-            background: #f4f6f9;
-            padding: 40px;
-        }
 
-        form{
-            background: white;
-            padding: 20px;
-            width: 400px;
-        }
-
-        input{
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-        button{
-            padding: 10px 20px;
-            background: #1a3a5c;
-            color: white;
-            border: none;
-        }
-
-=======
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -81,7 +37,6 @@ $data = $user->fetch_assoc();
         h1 {
             font-size: 22px;
             font-weight: 600;
-            color: #1a1a1a;
         }
 
         h2 {
@@ -90,9 +45,18 @@ $data = $user->fetch_assoc();
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #888;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* Messages */
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 0.5px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
         .error {
             background: #fff0f0;
             color: #c0392b;
@@ -111,7 +75,6 @@ $data = $user->fetch_assoc();
             font-size: 14px;
         }
 
-        /* Summary cards */
         .summary-table {
             width: 100%;
             border-collapse: separate;
@@ -138,11 +101,9 @@ $data = $user->fetch_assoc();
         .summary-table td {
             font-size: 26px;
             font-weight: 600;
-            color: #1a1a1a;
             padding-top: 4px;
         }
 
-        /* Form card */
         form {
             background: #fff;
             border: 0.5px solid rgba(0, 0, 0, 0.1);
@@ -153,7 +114,6 @@ $data = $user->fetch_assoc();
             gap: 1.25rem;
         }
 
-        /* Profile table rows → field layout */
         .profile-table {
             width: 100%;
             border-collapse: collapse;
@@ -171,7 +131,6 @@ $data = $user->fetch_assoc();
             padding: 6px 0;
         }
 
-        /* Inputs */
         .profile-table input[type="text"],
         .profile-table input[type="email"],
         .profile-table input[type="password"] {
@@ -182,35 +141,10 @@ $data = $user->fetch_assoc();
             background: #fff;
             border: 0.5px solid rgba(0, 0, 0, 0.2);
             border-radius: 8px;
-            transition: border-color 0.15s, box-shadow 0.15s;
             outline: none;
             font-family: inherit;
         }
 
-        .profile-table input:hover {
-            border-color: rgba(0, 0, 0, 0.35);
-        }
-
-        .profile-table input:focus {
-            border-color: rgba(0, 0, 0, 0.4);
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
-        }
-
-        /* Section divider label */
-        h2 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        h2::after {
-            content: '';
-            flex: 1;
-            height: 0.5px;
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        /* Submit button */
         .profile-table input[type="submit"] {
             padding: 9px 22px;
             font-size: 14px;
@@ -221,68 +155,33 @@ $data = $user->fetch_assoc();
             border-radius: 8px;
             cursor: pointer;
             font-family: inherit;
-            transition: opacity 0.15s;
         }
 
-        .profile-table input[type="submit"]:hover {
-            opacity: 0.8;
+        .back-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
         }
->>>>>>> aea489d (add jarif)
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
-<<<<<<< HEAD
 
-<h2>Update Profile</h2>
-
-<form method="post">
-
-    <input type="text" name="name"
-    value="<?php echo $data["name"]; ?>">
-
-    <input type="email" name="email"
-    value="<?php echo $data["email"]; ?>">
-
-    <input type="text" name="phone"
-    value="<?php echo $data["phone"]; ?>">
-
-    <button type="submit">Update</button>
-
-</form>
-
-<?php
-
-if(isset($_POST["name"]))
-{
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-
-    $obj->updateProfile($conn, $id, $name, $email, $phone);
-
-    echo "<p>Profile Updated</p>";
-}
-
-?>
-
-<br>
-
-<a href="member_dashboard.php">Back</a>
-
-=======
 <div class="profile-container">
 
     <h1>Profile</h1>
 
-    <?php
-    if ($error != "") {
-        echo "<p class='error'>$error</p>";
-    }
-    if ($success != "") {
-        echo "<p class='success'>$success</p>";
-    }
-    ?>
+    <?php if (!empty($error)) { ?>
+        <p class="error"><?= $error; ?></p>
+    <?php } ?>
+
+    <?php if (!empty($success)) { ?>
+        <p class="success"><?= $success; ?></p>
+    <?php } ?>
 
     <h2>Dashboard summary</h2>
 
@@ -292,10 +191,11 @@ if(isset($_POST["name"]))
             <th>Due in 7 days</th>
             <th>Outstanding fines</th>
         </tr>
+
         <tr>
-            <td><?php echo $counts['active_loans']; ?></td>
-            <td><?php echo $counts['upcoming_dues']; ?></td>
-            <td><?php echo $counts['outstanding_fines']; ?></td>
+            <td><?= $counts['active_loans'] ?? 0; ?></td>
+            <td><?= $counts['upcoming_dues'] ?? 0; ?></td>
+            <td><?= $counts['outstanding_fines'] ?? 0; ?></td>
         </tr>
     </table>
 
@@ -306,15 +206,26 @@ if(isset($_POST["name"]))
         <table class="profile-table">
             <tr>
                 <td>Name</td>
-                <td><input type="text" name="name" value="<?php echo $user['name']; ?>"></td>
+                <td>
+                    <input type="text" name="name"
+                    value="<?= htmlspecialchars($user['name'] ?? ''); ?>">
+                </td>
             </tr>
+
             <tr>
                 <td>Email</td>
-                <td><input type="email" name="email" value="<?php echo $user['email']; ?>"></td>
+                <td>
+                    <input type="email" name="email"
+                    value="<?= htmlspecialchars($user['email'] ?? ''); ?>">
+                </td>
             </tr>
+
             <tr>
                 <td>Phone</td>
-                <td><input type="text" name="phone" value="<?php echo $user['phone']; ?>"></td>
+                <td>
+                    <input type="text" name="phone"
+                    value="<?= htmlspecialchars($user['phone'] ?? ''); ?>">
+                </td>
             </tr>
         </table>
 
@@ -323,12 +234,18 @@ if(isset($_POST["name"]))
         <table class="profile-table">
             <tr>
                 <td>Current password</td>
-                <td><input type="password" name="current_password" placeholder="••••••••"></td>
+                <td>
+                    <input type="password" name="current_password">
+                </td>
             </tr>
+
             <tr>
                 <td>New password</td>
-                <td><input type="password" name="new_password" placeholder="••••••••"></td>
+                <td>
+                    <input type="password" name="new_password">
+                </td>
             </tr>
+
             <tr>
                 <td colspan="2" style="text-align: right; padding-top: 8px;">
                     <input type="submit" value="Save changes">
@@ -338,7 +255,9 @@ if(isset($_POST["name"]))
 
     </form>
 
+    <a class="back-link" href="member_dashboard.php">Back</a>
+
 </div>
->>>>>>> aea489d (add jarif)
+
 </body>
 </html>
